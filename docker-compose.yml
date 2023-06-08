@@ -11,26 +11,6 @@ services:
             - default
         volumes:
             -  key_trust-store-volume:/etc/openelis-global
-#    database:
-#        container_name: openelisglobal-database 
-#        image: postgres:9.5
-#        ports:
-#            - "15432:5432"
-#        restart: always
-#        env_file:
-#            - ./volume/database/database.env
-#        volumes:
-#              # preserves the database between containers
-#             - db-data:/var/lib/postgresql/data                
-#              # files here will run on install
-#             - ./volume/database/dbInit:/docker-entrypoint-initdb.d
-#        networks:
-#            - default
-#        healthcheck:
-#            test: [ "CMD", "pg_isready", "-q", "-d", "clinlims", "-U", "clinlims" ]
-#            timeout: 45s
-#            interval: 10s
-#            retries: 10 
             
     oe.openelis.org:
         container_name: openelisglobal-webapp 
@@ -95,7 +75,6 @@ networks:
         - subnet: 172.20.1.0/24  
         
 volumes:
-#  db-data:
   key_trust-store-volume:
        
     
