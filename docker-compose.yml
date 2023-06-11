@@ -19,7 +19,7 @@ services:
         #    - database
         ports:
             - "8080:8080"
-            - "8443:8443"
+            - "443:8443"
         restart: always
         networks:
           default:
